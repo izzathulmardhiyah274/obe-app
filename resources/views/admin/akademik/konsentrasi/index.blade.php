@@ -65,14 +65,34 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="mb-3">
-                                                <label class="form-label fw-semibold">Kode <span class="text-danger">*</span></label>
-                                                <input type="text" name="kode" value="{{ old('kode', $row->kode) }}" required maxlength="10"
-                                                       class="form-control text-uppercase" style="font-family:monospace;">
+                                                <label for="kode-{{ $row->id }}" class="form-label fw-semibold">
+                                                    Kode <span class="text-danger">*</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="kode-{{ $row->id }}"
+                                                    name="kode"
+                                                    value="{{ old('kode', $row->kode) }}"
+                                                    required
+                                                    maxlength="10"
+                                                    class="form-control text-uppercase"
+                                                    style="font-family:monospace;"
+                                                >
                                             </div>
+
                                             <div class="mb-0">
-                                                <label class="form-label fw-semibold">Nama <span class="text-danger">*</span></label>
-                                                <input type="text" name="nama" value="{{ old('nama', $row->nama) }}" required maxlength="150"
-                                                       class="form-control">
+                                                <label for="nama-{{ $row->id }}" class="form-label fw-semibold">
+                                                    Nama <span class="text-danger">*</span>
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="nama-{{ $row->id }}"
+                                                    name="nama"
+                                                    value="{{ old('nama', $row->nama) }}"
+                                                    required
+                                                    maxlength="150"
+                                                    class="form-control"
+                                                >
                                             </div>
                                         </div>
                                         <div class="modal-footer">
