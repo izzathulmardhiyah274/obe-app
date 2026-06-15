@@ -32,8 +32,8 @@ class CourseSeeder extends Seeder
                 ['email' => strtolower(str_replace([' ', '.', ','], '', $name)) . '@example.com'],
                 [
                     'name' => $name,
-                    'identity' => rand(10000000, 99999999), // Dummy NIP
-                    'password' => '$2y$12$m3WNr8J5FgaSj73Q6Qd6z.GBtuwQ89HbfctHwgH4HIsKuzcID96Za', // password
+                    'identity' => random_int(10000000, 99999999), // Dummy NIP
+                    'password' => bcrypt('password'),
                     'role' => 'dosen'
                 ]
             );
