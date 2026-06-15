@@ -124,17 +124,37 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label fw-semibold">Kode <span class="text-danger">*</span></label>
-                            <input type="text" name="kode" value="{{ old('kode') }}" required maxlength="10"
-                                   class="form-control text-uppercase @error('kode') is-invalid @enderror"
-                                   style="font-family:monospace;" placeholder="Contoh: RPL">
+                            <label for="kode-tambah" class="form-label fw-semibold">
+                                Kode <span class="text-danger">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="kode-tambah"
+                                name="kode"
+                                value="{{ old('kode') }}"
+                                required
+                                maxlength="10"
+                                class="form-control text-uppercase @error('kode') is-invalid @enderror"
+                                style="font-family:monospace;"
+                                placeholder="Contoh: RPL"
+                            >
                             @error('kode')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
+
                         <div class="mb-0">
-                            <label class="form-label fw-semibold">Nama <span class="text-danger">*</span></label>
-                            <input type="text" name="nama" value="{{ old('nama') }}" required maxlength="150"
-                                   class="form-control @error('nama') is-invalid @enderror"
-                                   placeholder="Contoh: Rekayasa Perangkat Lunak">
+                            <label for="nama-tambah" class="form-label fw-semibold">
+                                Nama <span class="text-danger">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="nama-tambah"
+                                name="nama"
+                                value="{{ old('nama') }}"
+                                required
+                                maxlength="150"
+                                class="form-control @error('nama') is-invalid @enderror"
+                                placeholder="Contoh: Rekayasa Perangkat Lunak"
+                            >
                             @error('nama')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                     </div>
