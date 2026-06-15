@@ -63,25 +63,40 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="mb-3">
-                                            <label class="form-label">Jabatan</label>
-                                            <select name="jabatan" class="form-select" required>
+                                                <label for="jabatan_{{ $row->id }}" class="form-label">Jabatan</label>
+                                            <select id="jabatan_{{ $row->id }}"
+                                                    name="jabatan"
+                                                    class="form-select"
+                                                    required>
                                                 @foreach($jabatanOptions as $opt)
                                                     <option value="{{ $opt }}" @selected($row->jabatan === $opt)>{{ $opt }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" name="keterangan" class="form-control" value="{{ $row->keterangan }}">
+                                            <label for="keterangan_{{ $row->id }}" class="form-label">Keterangan</label>
+                                            <input type="text"
+                                                id="keterangan_{{ $row->id }}"
+                                                name="keterangan"
+                                                class="form-control"
+                                                value="{{ $row->keterangan }}">
                                         </div>
                                         <div class="row g-2">
                                             <div class="col-6">
-                                                <label class="form-label">Mulai</label>
-                                                <input type="date" name="mulai_menjabat" class="form-control" value="{{ $row->mulai_menjabat?->format('Y-m-d') }}">
+                                                <label for="mulai_menjabat_{{ $row->id }}" class="form-label">Mulai</label>
+                                                <input type="date"
+                                                    id="mulai_menjabat_{{ $row->id }}"
+                                                    name="mulai_menjabat"
+                                                    class="form-control"
+                                                    value="{{ $row->mulai_menjabat?->format('Y-m-d') }}">
                                             </div>
                                             <div class="col-6">
-                                                <label class="form-label">Selesai</label>
-                                                <input type="date" name="selesai_menjabat" class="form-control" value="{{ $row->selesai_menjabat?->format('Y-m-d') }}">
+                                                <label for="selesai_menjabat_{{ $row->id }}" class="form-label">Selesai</label>
+                                                <input type="date"
+                                                    id="selesai_menjabat_{{ $row->id }}"
+                                                    name="selesai_menjabat"
+                                                    class="form-control"
+                                                    value="{{ $row->selesai_menjabat?->format('Y-m-d') }}">
                                             </div>
                                         </div>
                                         <div class="form-check mt-3">
@@ -117,8 +132,11 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label">Dosen</label>
-                            <select name="user_id" class="form-select" required>
+                            <label for="user_id" class="form-label">Dosen</label>
+                            <select id="user_id"
+                                name="user_id"
+                                class="form-select"
+                                required>
                                 <option value="">— Pilih dosen —</option>
                                 @foreach($dosen as $d)
                                     <option value="{{ $d->id }}">{{ $d->name }} ({{ $d->identity }})</option>
@@ -126,25 +144,37 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Jabatan</label>
-                            <select name="jabatan" class="form-select" required>
+                            <label for="jabatan" class="form-label">Jabatan</label>
+                            <select id="jabatan"
+                                    name="jabatan"
+                                    class="form-select"
+                                    required>
                                 @foreach($jabatanOptions as $opt)
                                     <option value="{{ $opt }}">{{ $opt }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Keterangan</label>
-                            <input type="text" name="keterangan" class="form-control">
+                            <label for="keterangan" class="form-label">Keterangan</label>
+                            <input type="text"
+                                id="keterangan"
+                                name="keterangan"
+                                class="form-control">
                         </div>
                         <div class="row g-2">
                             <div class="col-6">
-                                <label class="form-label">Mulai</label>
-                                <input type="date" name="mulai_menjabat" class="form-control">
+                                <label for="mulai_menjabat" class="form-label">Mulai</label>
+                                <input type="date"
+                                    id="mulai_menjabat"
+                                    name="mulai_menjabat"
+                                    class="form-control">
                             </div>
                             <div class="col-6">
-                                <label class="form-label">Selesai</label>
-                                <input type="date" name="selesai_menjabat" class="form-control">
+                                <label for="selesai_menjabat" class="form-label">Selesai</label>
+                                <input type="date"
+                                    id="selesai_menjabat"
+                                    name="selesai_menjabat"
+                                    class="form-control">
                             </div>
                         </div>
                         <div class="form-check mt-3">
