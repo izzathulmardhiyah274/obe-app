@@ -142,14 +142,31 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="mb-3">
-                                                <label class="form-label fw-semibold">Kode</label>
-                                                <input type="text" name="kode" value="{{ old('kode', $row->kode) }}" maxlength="20"
-                                                       class="form-control text-uppercase" style="font-family:monospace;">
+                                                <label for="kode-edit-{{ $row->id }}" class="form-label fw-semibold">Kode</label>
+
+                                                <input 
+                                                    type="text"
+                                                    id="kode-edit-{{ $row->id }}"
+                                                    name="kode"
+                                                    value="{{ old('kode', $row->kode) }}"
+                                                    maxlength="20"
+                                                    class="form-control text-uppercase"
+                                                    style="font-family:monospace;">
                                             </div>
                                             <div class="mb-0">
-                                                <label class="form-label fw-semibold">Nama Jurusan <span class="text-danger">*</span></label>
-                                                <input type="text" name="nama_jurusan" value="{{ old('nama_jurusan', $row->nama_jurusan) }}" required maxlength="150"
-                                                       class="form-control">
+                                                <label for="nama-jurusan-edit-{{ $row->id }}" 
+                                                    class="form-label fw-semibold">
+                                                    Nama Jurusan <span class="text-danger">*</span>
+                                                </label>
+
+                                                <input
+                                                    type="text"
+                                                    id="nama-jurusan-edit-{{ $row->id }}"
+                                                    name="nama_jurusan"
+                                                    value="{{ old('nama_jurusan', $row->nama_jurusan) }}"
+                                                    required
+                                                    maxlength="150"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -180,17 +197,35 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label fw-semibold">Kode</label>
-                            <input type="text" name="kode" value="{{ old('kode') }}" maxlength="20"
-                                   class="form-control text-uppercase @error('kode') is-invalid @enderror"
-                                   style="font-family:monospace;" placeholder="Contoh: TI">
+                            <label for="kode-tambah" class="form-label fw-semibold">
+                                Kode
+                            </label>
+
+                            <input
+                                type="text"
+                                id="kode-tambah"
+                                name="kode"
+                                value="{{ old('kode') }}"
+                                maxlength="20"
+                                class="form-control text-uppercase @error('kode') is-invalid @enderror"
+                                style="font-family:monospace;"
+                                placeholder="Contoh: TI">
                             @error('kode')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                         <div class="mb-0">
-                            <label class="form-label fw-semibold">Nama Jurusan <span class="text-danger">*</span></label>
-                            <input type="text" name="nama_jurusan" value="{{ old('nama_jurusan') }}" required maxlength="150"
-                                   class="form-control @error('nama_jurusan') is-invalid @enderror"
-                                   placeholder="Contoh: Teknik Informatika">
+                            <label for="nama-jurusan-tambah" class="form-label fw-semibold">
+                                Nama Jurusan <span class="text-danger">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nama-jurusan-tambah"
+                                name="nama_jurusan"
+                                value="{{ old('nama_jurusan') }}"
+                                required
+                                maxlength="150"
+                                class="form-control @error('nama_jurusan') is-invalid @enderror"
+                                placeholder="Contoh: Teknik Informatika">
                             @error('nama_jurusan')<div class="invalid-feedback">{{ $message }}</div>@enderror
                         </div>
                     </div>
